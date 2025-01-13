@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import "./Navbar.css";
 import { Button } from "@/components/ui/button";
 
@@ -16,6 +17,26 @@ const Navbar = () => {
       </div>
     </nav>
   );
+=======
+import { Link } from '@tanstack/react-router';
+import './Navbar.css';
+
+const Navbar = () => {
+	return (
+		<nav className="navbar-container">
+			<h1>EcoManager</h1>
+			<div>
+				<Link to="/login" className="[&.active]:font-bold">
+					Login
+				</Link>
+				<a href="">Dashboard</a>
+				<a href="">Resurse</a>
+				<a href="">Rapoarte</a>
+				<a href="">Setari</a>
+			</div>
+		</nav>
+	);
+>>>>>>> main
 };
 
 export default Navbar;
