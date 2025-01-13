@@ -39,16 +39,17 @@ function Usage(props: { type: SystemParams }) {
 		water: '0',
 		electricity: '0',
 	});
-	const [toggleState, setToggleState] = useState({
-		heating: true,
-		water: true,
-		electricity: true,
-	});
+	const [toggleState, setToggleState] = useState(false);
 	const toggleMutation = useMutation({
 		mutationFn: async () => {
-			return await toggle(props.type, !toggleState[props.type]);
+			return await toggle(props.type, !toggleState);
 		},
 	});
+	useEffect(() => {
+		if (status.data) {
+			setToggleState(status.data[props.type] === 'on');
+		}
+	}, [status.data]);
 	useEffect(() => {
 		console.log('BUDGETS: ', budgets);
 	}, [budgets]);
@@ -83,12 +84,8 @@ function Usage(props: { type: SystemParams }) {
 					/>
 					<Progress value={(usage / budget) * 100} />
 					<Switch
-						value={!toggleState[props.type]}
+						value={toggleState ? 'on' : 'off'}
 						onClick={() => {
-							setToggleState(prev => ({
-								...prev,
-								[props.type]: !prev[props.type],
-							}));
 							return toggleMutation.mutate();
 						}}
 					/>
