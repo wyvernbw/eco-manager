@@ -17,18 +17,15 @@ importers:
       '@radix-ui/react-navigation-menu':
         specifier: ^1.2.3
         version: 1.2.3(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-<<<<<<< HEAD
       '@radix-ui/react-progress':
         specifier: ^1.1.1
         version: 1.1.1(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-=======
       '@radix-ui/react-slot':
         specifier: ^1.1.1
         version: 1.1.1(@types/react@18.3.18)(react@18.3.1)
       '@tanstack/react-router':
         specifier: ^1.95.5
         version: 1.95.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
->>>>>>> main
       '@trpc/client':
         specifier: 11.0.0-rc.700
         version: 11.0.0-rc.700(@trpc/server@11.0.0-rc.700(typescript@5.6.3))(typescript@5.6.3)
