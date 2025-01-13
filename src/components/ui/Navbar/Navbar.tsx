@@ -71,15 +71,17 @@ const Navbar = () => {
 >>>>>>> a49f833 (fix merge conflict in navbar)
 	return (
 		<nav className="navbar-container">
-			<h1>EcoManager</h1>
-			<div>
-				<Link to="/login" className="[&.active]:font-bold">
-					Login
-				</Link>
+			<h1 className="text-white text-xl font-bold">🌳 EcoManager</h1>
+			<div className="text-white flex gap-4">
 				<a href="">Dashboard</a>
 				<a href="">Resurse</a>
 				<a href="">Rapoarte</a>
-				<a href="">Setari</a>
+				<a href="" className="mr-8">
+					Setari
+				</a>
+				<Link to="/login" className="[&.active]:font-bold">
+					Login
+				</Link>
 			</div>
 		</nav>
 	);

@@ -1,5 +1,11 @@
-import { getSystemStatus, getUsage, SystemParams, toUnits } from '@/api';
-import { useQuery } from 'react-query';
+import {
+	getSystemStatus,
+	getUsage,
+	SystemParams,
+	toggle,
+	toUnits,
+} from '@/api';
+import { useMutation, useQuery } from 'react-query';
 import {
 	Card,
 	CardContent,
@@ -11,9 +17,11 @@ import {
 import { Input } from './ui/input';
 import { Progress } from './ui/progress';
 import { useEffect, useState } from 'react';
+import { Switch } from './ui/switch';
+import { set } from 'date-fns';
 
 function Usage(props: { type: SystemParams }) {
-	//const status = useQuery(props.type, () => getSystemStatus());
+	const status = useQuery(props.type, () => getSystemStatus());
 	const usageData = useQuery({
 		queryKey: props.type,
 		refetchInterval: 2000,
@@ -30,6 +38,16 @@ function Usage(props: { type: SystemParams }) {
 		heating: '0',
 		water: '0',
 		electricity: '0',
+	});
+	const [toggleState, setToggleState] = useState({
+		heating: false,
+		water: false,
+		electricity: false,
+	});
+	const toggleMutation = useMutation({
+		mutationFn: async () => {
+			return await toggle(props.type, !toggleState[props.type]);
+		},
 	});
 	useEffect(() => {
 		console.log('BUDGETS: ', budgets);
@@ -64,6 +82,16 @@ function Usage(props: { type: SystemParams }) {
 						}}
 					/>
 					<Progress value={(usage / budget) * 100} />
+					<Switch
+						value={!toggleState[props.type]}
+						onClick={() => {
+							setToggleState(prev => ({
+								...prev,
+								[props.type]: !prev[props.type],
+							}));
+							return toggleMutation.mutate();
+						}}
+					/>
 				</div>
 			</CardContent>
 			<CardFooter></CardFooter>

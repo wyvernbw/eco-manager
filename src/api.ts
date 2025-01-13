@@ -2,7 +2,7 @@ import { z } from 'zod';
 
 export const systemStatusSchema = z.object({
 	heat: z.enum(['on', 'off', 'unknown']),
-	water: z.enum(['connected', 'unknown']),
+	water: z.enum(['on', 'off', 'unknown']),
 	electricity: z.enum(['on', 'off', 'unknown']),
 });
 
@@ -82,6 +82,13 @@ export async function getSystemStatus() {
 		.then(res => res.json())
 		.then(logResponse)
 		.then(res => systemStatusSchema.parse(res));
+}
+
+export async function toggle(param: SystemParams, value: boolean) {
+	return await fetch(`${url}/api/${param}`, {
+		method: 'POST',
+		body: JSON.stringify({ value: value ? 'on' : 'off' }),
+	});
 }
 
 export const toUnits = (param: SystemParams) => {
