@@ -1,4 +1,3 @@
-import { get } from 'http';
 import { z } from 'zod';
 
 export const systemStatusSchema = z.object({
@@ -34,32 +33,53 @@ export async function getUsage() {
 	};
 }
 
+const url = '192.168.0.40:4226';
+const logResponse = (res: any) => {
+	console.log(res);
+	return res;
+};
+
 export async function getEnergy() {
-	return await fetch('192.167.0.40/api/energy')
+	console.log('FETCH');
+
+	return await fetch(`${url}/api/electricity`)
 		.then(res => res.json())
+		.then(logResponse)
 		.then(res => electricitySchema.parse(res));
 }
 
 export async function getHeating() {
-	return await fetch('192.167.0.40/api/heating')
+	console.log('FETCH');
+
+	return await fetch(`${url}/api/heat`)
+		.then(logResponse)
 		.then(res => res.json())
 		.then(res => heatingSchema.parse(res));
 }
 
 export async function getTemperature() {
-	return await fetch('192.167.0.40/api/temperature')
+	console.log('FETCH');
+
+	return await fetch(`${url}/api/temperature`)
 		.then(res => res.json())
+		.then(logResponse)
 		.then(res => temperatureSchema.parse(res));
 }
 
 export async function getWater() {
-	return await fetch('192.167.0.40/api/water')
+	console.log('FETCH');
+
+	return await fetch(`${url}/api/water`)
 		.then(res => res.json())
+		.then(logResponse)
 		.then(res => waterSchema.parse(res));
 }
 
 export async function getSystemStatus() {
-	return await fetch('192.167.0.40/api/system')
+	console.log('FETCH');
+
+	return await fetch(`${url}/api/system`)
 		.then(res => res.json())
+		.then(logResponse)
 		.then(res => systemStatusSchema.parse(res));
 }

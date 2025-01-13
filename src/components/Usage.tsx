@@ -35,7 +35,9 @@ function Usage(props: { type: SystemParams }) {
 					<Input
 						className="w-32"
 						onChange={e =>
-							(budgets[0][props.type] = e.target.value as number)
+							(budgets[0][props.type] = parseFloat(
+								e.target.value
+							))
 						}
 					/>
 					<Progress value={(usage / budget) * 100} />
