@@ -6,6 +6,9 @@ const systemStatusSchema = z.object({
 	electricity: z.enum(['on', 'off', 'unknown']),
 });
 
+type SystemStatus = z.infer<typeof systemStatusSchema>;
+type SystemParams = keyof SystemStatus;
+
 const energySchema = z.object({
 	energy: z.number(),
 });
