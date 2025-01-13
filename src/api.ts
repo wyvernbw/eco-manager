@@ -2,10 +2,12 @@ import { z } from 'zod';
 
 const systemStatusSchema = z.object({
 	heating: z.enum(['on', 'off', 'unknown']),
-	ac: z.enum(['on', 'off', 'unknown']),
 	water: z.enum(['connected', 'unknown']),
 	electricity: z.enum(['on', 'off', 'unknown']),
 });
+
+type SystemStatus = z.infer<typeof systemStatusSchema>;
+type SystemParams = keyof SystemStatus;
 
 const energySchema = z.object({
 	energy: z.number(),
