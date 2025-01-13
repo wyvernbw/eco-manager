@@ -11,7 +11,15 @@
   },
   "dependencies": {
 <<<<<<< HEAD
+<<<<<<< HEAD
+||||||| parent of c67856f (login page complete (sper))
+=======
+    "@hookform/resolvers": "^3.10.0",
+    "@radix-ui/react-label": "^2.1.1",
+>>>>>>> c67856f (login page complete (sper))
     "@radix-ui/react-navigation-menu": "^1.2.3",
+<<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD
     "@radix-ui/react-popover": "^1.1.4",
     "@radix-ui/react-slot": "^1.1.1",
@@ -36,10 +44,29 @@
     "@trpc/server": "11.0.0-rc.700",
 =======
 >>>>>>> 230210a ((wip) add usage component)
+||||||| parent of a788144 (add tanstack router)
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.471.0",
+    "@trpc/client": "11.0.0-rc.700",
+    "@trpc/server": "11.0.0-rc.700",
+=======
+||||||| parent of c67856f (login page complete (sper))
+=======
+    "@radix-ui/react-slot": "^1.1.1",
+>>>>>>> c67856f (login page complete (sper))
+    "@tanstack/react-router": "^1.95.5",
+    "@trpc/client": "11.0.0-rc.700",
+    "@trpc/server": "11.0.0-rc.700",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.471.0",
+>>>>>>> a788144 (add tanstack router)
     "react": "^18.3.1",
 <<<<<<< HEAD
     "react-day-picker": "8.10.1",
     "react-dom": "^18.3.1",
+    "react-hook-form": "^7.54.2",
     "react-query": "^3.39.3",
     "tailwind-merge": "^2.6.0",
 <<<<<<< HEAD
@@ -51,15 +78,22 @@
     "react-query": "^3.39.3",
 ||||||| parent of 230210a ((wip) add usage component)
     "tailwindcss-animate": "^1.0.7",
+<<<<<<< HEAD
     "react-query": "^3.39.3",
 =======
     "tailwindcss-animate": "^1.0.7",
 >>>>>>> 230210a ((wip) add usage component)
+||||||| parent of a788144 (add tanstack router)
+    "react-query": "^3.39.3",
+=======
+>>>>>>> a788144 (add tanstack router)
     "zod": "^3.24.1"
 >>>>>>> 64b5012 (add data model)
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
+    "@tanstack/router-devtools": "^1.95.5",
+    "@tanstack/router-plugin": "^1.95.5",
     "@types/node": "^22.10.5",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",

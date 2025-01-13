@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import "./App.css";
 import Navbar from "./components/ui/Navbar/Navbar";
 import ResourceCalendar from "./components/ui/Calendar/Calendar";
@@ -16,8 +17,17 @@ import Navbar from "./components/ui/Navbar/navbar";
 =======
 import Navbar from "./components/ui/Navbar/Navbar";
 >>>>>>> c392d1f (login page created)
+||||||| parent of a788144 (add tanstack router)
+import "./App.css";
+import Navbar from "./components/ui/Navbar/Navbar";
+=======
+import { TanStackRouterDevtools } from '@tanstack/router-devtools';
+import './App.css';
+import { Outlet } from '@tanstack/react-router';
+>>>>>>> a788144 (add tanstack router)
 
 function App() {
+<<<<<<< HEAD
 <<<<<<< HEAD
   return (
     <>
@@ -45,6 +55,21 @@ function App() {
 		</div>
 	);
 >>>>>>> 230210a ((wip) add usage component)
+||||||| parent of a788144 (add tanstack router)
+  return (
+    <>
+      <Navbar></Navbar>
+    </>
+  );
+=======
+	return (
+		<>
+			<Navbar></Navbar>
+			<Outlet />
+			<TanStackRouterDevtools />
+		</>
+	);
+>>>>>>> a788144 (add tanstack router)
 }
 
 export default App;
