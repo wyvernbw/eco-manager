@@ -32,7 +32,7 @@ function App() {
 				<Navbar />
 			</header>
 			<main className="flex flex-col p-4 gap-4 mt-16">
-				<Usage type="heating" />
+				<Usage type="heat" />
 				<Usage type="water" />
 				<Usage type="electricity" />
 			</main>
