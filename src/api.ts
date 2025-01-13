@@ -15,6 +15,10 @@ const temperatureSchema = z.object({
 	temperature: z.number(),
 });
 
+const waterSchema = z.object({
+	water: z.number(),
+});
+
 async function getEnergy() {
 	await fetch('192.167.0.40/api/energy')
 		.then(res => res.json())
@@ -25,6 +29,12 @@ async function getTemperature() {
 	await fetch('192.167.0.40/api/temperature')
 		.then(res => res.json())
 		.then(res => temperatureSchema.parse(res));
+}
+
+async function getWater() {
+	await fetch('192.167.0.40/api/water')
+		.then(res => res.json())
+		.then(res => waterSchema.parse(res));
 }
 
 async function getSystemStatus() {
