@@ -1,6 +1,10 @@
 import './App.css';
 import Navbar from './components/ui/Navbar/Navbar';
 import Usage from './components/Usage';
+import { TanStackRouterDevtools } from '@tanstack/router-devtools';
+import './App.css';
+import Navbar from './components/ui/Navbar/Navbar';
+import { Outlet } from '@tanstack/react-router';
 
 function App() {
 	return (
@@ -13,6 +17,8 @@ function App() {
 				<Usage type="water" />
 				<Usage type="electricity" />
 			</main>
+			<Outlet />
+			<TanStackRouterDevtools />
 		</div>
 	);
 }
