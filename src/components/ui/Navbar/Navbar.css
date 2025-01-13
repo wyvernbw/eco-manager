@@ -1,0 +1,8 @@
+.navbar-container {
+    position: fixed;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
