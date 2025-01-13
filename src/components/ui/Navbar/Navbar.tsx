@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import "./Navbar.css";
 import { Button } from "@/components/ui/button";
 ||||||| parent of a788144 (add tanstack router)
@@ -37,6 +38,37 @@ const Navbar = () => {
     </nav>
   );
 =======
+||||||| parent of a49f833 (fix merge conflict in navbar)
+<<<<<<< HEAD
+import "./Navbar.css";
+import { Button } from "@/components/ui/button";
+
+const Navbar = () => {
+  return (
+    <nav className="navbar-container">
+      <h1 className="app-name">EcoManager</h1>
+      <div className="nav-container">
+        <div className="link-container">
+            <a href="" className="nav-link">Dashboard</a>
+            <a href="" className="nav-link">Resurse</a>
+            <a href="" className="nav-link">Rapoarte</a>
+            <a href="" className="nav-link">Setari</a>
+        </div>
+        <Button variant="outline">Login</Button>
+      </div>
+    </nav>
+  );
+=======
+import { Link } from '@tanstack/react-router';
+import './Navbar.css';
+
+const Navbar = () => {
+=======
+import { Link } from '@tanstack/react-router';
+import './Navbar.css';
+
+const Navbar = () => {
+>>>>>>> a49f833 (fix merge conflict in navbar)
 	return (
 		<nav className="navbar-container">
 			<h1>EcoManager</h1>
@@ -51,7 +83,12 @@ const Navbar = () => {
 			</div>
 		</nav>
 	);
+<<<<<<< HEAD
 >>>>>>> a788144 (add tanstack router)
+||||||| parent of a49f833 (fix merge conflict in navbar)
+>>>>>>> main
+=======
+>>>>>>> a49f833 (fix merge conflict in navbar)
 };
 
 export default Navbar;
