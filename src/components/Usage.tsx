@@ -40,9 +40,9 @@ function Usage(props: { type: SystemParams }) {
 		electricity: '0',
 	});
 	const [toggleState, setToggleState] = useState({
-		heating: false,
-		water: false,
-		electricity: false,
+		heating: true,
+		water: true,
+		electricity: true,
 	});
 	const toggleMutation = useMutation({
 		mutationFn: async () => {
